@@ -15,7 +15,7 @@ const BlogItem = () => {
   const getResult = async () => {
     try {
       const result = await axios.get(
-        `http://localhost:5000/api/blog/${params.id}`,
+        `${process.env.REACT_APP_API_URL}/api/blog/${params.id}`,
       );
 
       setMessage(result.data);

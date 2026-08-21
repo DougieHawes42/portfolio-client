@@ -11,7 +11,9 @@ const Home = () => {
 
   const getResult = async () => {
     try {
-      const result = await axios.get("http://localhost:5000/api/home");
+      const result = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/home`,
+      );
 
       setMessage(result.data);
     } catch (error) {

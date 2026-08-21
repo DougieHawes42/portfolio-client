@@ -11,7 +11,9 @@ const Blog = () => {
 
   const getResult = async () => {
     try {
-      const result = await axios.get("http://localhost:5000/api/blog");
+      const result = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/blog`,
+      );
 
       setMessage(result.data);
     } catch (error) {

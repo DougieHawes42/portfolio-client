@@ -11,7 +11,9 @@ const Contact = () => {
 
   const getResult = async () => {
     try {
-      const result = await axios.get("http://localhost:5000/api/profile");
+      const result = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/profile`,
+      );
 
       setMessage(result.data);
     } catch (error) {

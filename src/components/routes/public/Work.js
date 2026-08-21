@@ -11,7 +11,9 @@ const Work = () => {
 
   const getResult = async () => {
     try {
-      const result = await axios.get("http://localhost:5000/api/work");
+      const result = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/work`,
+      );
 
       setMessage(result.data);
     } catch (error) {

@@ -15,7 +15,7 @@ const WorkItem = () => {
   const getResult = async () => {
     try {
       const result = await axios.get(
-        `http://localhost:5000/api/work/${params.id}`,
+        `${process.env.REACT_APP_API_URL}/api/work/${params.id}`,
       );
 
       setMessage(result.data);

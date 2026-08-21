@@ -11,7 +11,9 @@ const Skills = () => {
 
   const getResult = async () => {
     try {
-      const result = await axios.get("http://localhost:5000/api/skill");
+      const result = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/skill`,
+      );
 
       setMessage(result.data);
     } catch (error) {

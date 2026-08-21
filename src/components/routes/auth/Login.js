@@ -11,7 +11,9 @@ const Login = () => {
 
   const getResult = async () => {
     try {
-      const result = await axios.get("http://localhost:5000/api/auth");
+      const result = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/auth`,
+      );
 
       setMessage(result.data);
     } catch (error) {
