@@ -1,0 +1,24 @@
+@import "../../styles/variables.scss";
+
+.link {
+  font-size: $link-font-size1;
+}
+
+.header-link {
+  font-size: 21px;
+  font-weight: $link-font-weight;
+  margin-left: 7px;
+  text-align: right;
+
+  transition: 0.3s ease-in-out color;
+}
+
+.route {
+  .route-title {
+    text-transform: uppercase;
+  }
+  .route-content {
+    max-height: calc(100vh - 120px);
+    overflow-y: scroll;
+  }
+}

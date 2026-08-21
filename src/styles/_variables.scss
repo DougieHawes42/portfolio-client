@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("../fonts/PlusJakartaSans.ttf");
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter.ttf");
+}
+
+$font1: "Plus Jakarta Sans";
+$font2: "Inter";
+
+$padding1: 7px 2%;
+
+$link-font-size1: 28px;
+$link-font-weight: 500;
+
+$colour-lightmode01: #f9fafb;
+$colour-lightmode02: #3b2f2f;
+$colour-lightmode03: #2a2a2a;
+$colour-lightmode04: #128482;
+$colour-lightmode05: #d0491e;
+$colour-darkmode01: #171717;
+$colour-darkmode02: #f5f2ee;
+$colour-darkmode03: #b8b5b2;
+$colour-darkmode04: #35b7b2;
+$colour-darkmode05: #f06a3a;

@@ -1,0 +1,45 @@
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+
+import "./styles/style.scss";
+
+import Header from "./components/layout/Header.js";
+
+import Home from "./components/routes/public/Home.js";
+import Work from "./components/routes/public/Work.js";
+import Skills from "./components/routes/public/Skills.js";
+import Contact from "./components/routes/public/Contact.js";
+import Blog from "./components/routes/public/Blog.js";
+
+import BlogItem from "./components/routes/public/BlogItem.js";
+import WorkItem from "./components/routes/public/WorkItem.js";
+
+import Login from "./components/routes/auth/Login.js";
+
+import Dashboard from "./components/routes/private/Dashboard.js";
+
+const App = () => {
+  const [darkmodeOn, setDarkmodeOn] = useState(false);
+
+  return (
+    <div className={`app ${darkmodeOn ? "darkmode" : "lightmode"}`}>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="/skills" element={<Skills />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/blog" element={<Blog />} />
+        {/* item routes */}
+        <Route path="/work/:id" element={<WorkItem />} />
+        <Route path="/blog/:id" element={<BlogItem />} />
+        {/* auth routes */}
+        <Route path="/secretentrance/42/login" element={<Login />} />
+        {/* private routes */}
+        <Route path="/secretentrance/42/dashboard" element={<Dashboard />} />
+      </Routes>
+    </div>
+  );
+};
+
+export default App;
