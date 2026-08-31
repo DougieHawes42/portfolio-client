@@ -26,7 +26,6 @@ const Work = () => {
     getWork();
   }, []);
 
-  console.log(work);
   const content = (
     <div className="work">
       <div className="work-grid">

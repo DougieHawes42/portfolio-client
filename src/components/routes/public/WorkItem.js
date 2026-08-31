@@ -1,34 +1,104 @@
 import axios from "axios";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 import "./style.scss";
 
-import { PublicRoute } from "../../utils/routes.js";
+import { PublicItemRoute } from "../../utils/routes.js";
 
 const WorkItem = () => {
+  const [workItem, setWorkItem] = useState([]);
+  const [imageIndex, setImageIndex] = useState(0);
+
   const params = useParams();
 
-  const [message, setMessage] = useState("");
+  useEffect(() => {
+    const getResult = async () => {
+      try {
+        const result = await axios.get(
+          `${process.env.REACT_APP_API_URL}/api/work/${params.id}`,
+        );
 
-  const getResult = async () => {
-    try {
-      const result = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/work/${params.id}`,
-      );
+        setWorkItem(result.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-      setMessage(result.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+    getResult();
+  }, []);
 
-  getResult();
+  const content = (
+    <div className="work-item">
+      <div className="work-item-columns">
+        <div className="work-item-column">
+          <div className="work-item-image-container">
+            <img
+              className="work-item-image"
+              src={`${process.env.REACT_APP_API_URL}/uploads/${workItem.images?.[imageIndex]}`}
+              alt=""
+            />
+            <div className="work-image-toggle">
+              <div
+                className="work-image-toggle-left"
+                onClick={() =>
+                  setImageIndex((prevIndex) =>
+                    prevIndex > 0 ? prevIndex - 1 : workItem.images.length - 1,
+                  )
+                }>
+                <FaChevronLeft />
+              </div>
+              <div
+                className="work-image-toggle-right"
+                onClick={() =>
+                  setImageIndex((prevIndex) =>
+                    prevIndex < workItem.images.length - 1 ? prevIndex + 1 : 0,
+                  )
+                }>
+                <FaChevronRight />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="work-item-column">
+          <p className="work-item-category">{workItem.category}</p>
+          <div className="work-item-tags-container">
+            {workItem.tags &&
+              workItem.tags.map((t) => <div key={t}>#{t}, </div>)}
+          </div>
+          <p className="work-item-description">{workItem.description}</p>
+        </div>
+      </div>
+      <div className="work-item-links-container">
+        <a
+          className="work-item-link"
+          href={workItem.gitHubClientLink}
+          target="blank">
+          client
+        </a>
+        {workItem.gitHubServerLink && (
+          <a
+            className="work-item-link"
+            href={workItem.gitHubServerLink}
+            target="blank">
+            server
+          </a>
+        )}
+        <a
+          className="work-item-link site"
+          href={workItem.siteLink}
+          target="blank">
+          view
+        </a>
+      </div>
+    </div>
+  );
 
-  const content = <>{message}</>;
-
-  return <PublicRoute content={content} title={`work-item ${params.id}`} />;
+  return (
+    workItem && <PublicItemRoute content={content} title={workItem.title} />
+  );
 };
 
 export default WorkItem;

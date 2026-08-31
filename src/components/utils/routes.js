@@ -7,6 +7,13 @@ export const PublicRoute = ({ title, content }) => (
   </div>
 );
 
+export const PublicItemRoute = ({ title, content }) => (
+  <div className="route item">
+    <h2 className="route-title">{title}</h2>
+    <div className="route-content">{content}</div>
+  </div>
+);
+
 export const AuthRoute = ({ title, content }) => (
   <div className="route">
     <h2 className="route-title">{title}</h2>

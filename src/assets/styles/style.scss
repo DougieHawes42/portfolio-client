@@ -35,11 +35,6 @@ h3 {
   font-weight: 600;
 }
 
-// Body	Inter	400
-// Navigation	Inter	500
-// Buttons	Inter	600
-// Small/meta text	Inter	400–500
-
 .app {
   max-height: 100vh;
   min-height: 100vh;
@@ -129,6 +124,38 @@ h3 {
       background-color: $colour-lightmode05;
     }
   }
+  .work-item {
+    .work-item-columns {
+      .work-item-column {
+        .work-item-category {
+          color: $colour-lightmode05;
+        }
+        .work-item-description {
+          color: $colour-lightmode02;
+        }
+        .work-item-tags-container {
+          * {
+            color: $colour-lightmode04;
+          }
+        }
+      }
+    }
+    .work-item-links-container {
+      .work-item-link {
+        color: $colour-lightmode01;
+        background-color: $colour-lightmode05;
+      }
+    }
+    .work-item-link.site {
+      background-color: $colour-lightmode04;
+      color: $colour-lightmode01;
+
+      &:hover {
+        background-color: $colour-lightmode05;
+        color: $colour-lightmode04;
+      }
+    }
+  }
 }
 .darkmode {
   background-color: $colour-darkmode01;
@@ -210,6 +237,38 @@ h3 {
 
     &:hover {
       background-color: $colour-darkmode05;
+    }
+  }
+  .work-item {
+    .work-item-columns {
+      .work-item-column {
+        .work-item-category {
+          color: $colour-darkmode05;
+        }
+        .work-item-description {
+          color: $colour-darkmode02;
+        }
+        .work-item-tags-container {
+          * {
+            color: $colour-darkmode04;
+          }
+        }
+      }
+    }
+    .work-item-links-container {
+      .work-item-link {
+        color: $colour-darkmode01;
+        background-color: $colour-darkmode05;
+      }
+    }
+    .work-item-link.site {
+      background-color: $colour-darkmode04;
+      color: $colour-darkmode01;
+
+      &:hover {
+        background-color: $colour-darkmode05;
+        color: $colour-darkmode04;
+      }
     }
   }
 }
