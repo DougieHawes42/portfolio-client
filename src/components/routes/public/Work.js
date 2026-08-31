@@ -1,8 +1,6 @@
 import axios from "axios";
 
-import { useState } from "react";
-
-// import { work } from "../../../data.js";
+import { useState, useEffect } from "react";
 
 import "./style.scss";
 
@@ -12,19 +10,21 @@ import { WorkCard } from "../../utils/cards.js";
 const Work = () => {
   const [work, setWork] = useState([]);
 
-  const getWork = async () => {
-    try {
-      const result = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/work`,
-      );
+  useEffect(() => {
+    const getWork = async () => {
+      try {
+        const result = await axios.get(
+          `${process.env.REACT_APP_API_URL}/api/work`,
+        );
 
-      setWork(result.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+        setWork(result.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-  getWork();
+    getWork();
+  }, []);
 
   console.log(work);
   const content = (
