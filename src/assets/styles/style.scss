@@ -1,0 +1,215 @@
+@import "./variables.scss";
+
+* {
+  box-sizing: border-box;
+  font-family: $font2;
+  margin: 0;
+  outline: none;
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  background: red;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font1;
+}
+h1 {
+  font-size: 35px;
+  font-weight: 700;
+}
+h2 {
+  font-size: 42px;
+}
+h2,
+h3 {
+  font-weight: 600;
+}
+
+// Body	Inter	400
+// Navigation	Inter	500
+// Buttons	Inter	600
+// Small/meta text	Inter	400–500
+
+.app {
+  max-height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: $padding1;
+}
+
+.lightmode {
+  background-color: $colour-lightmode01;
+  * {
+    color: $colour-lightmode03;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $colour-lightmode05;
+  }
+  h1 {
+    color: $colour-lightmode04;
+  }
+  h2 {
+    color: $colour-lightmode02;
+  }
+  .home-mern-icons {
+    * {
+      color: $colour-lightmode02;
+    }
+  }
+  .header {
+    border-color: $colour-lightmode02;
+    .header-title {
+      #header-title-surname {
+        color: $colour-lightmode05;
+      }
+    }
+    .header-subtitle {
+      color: $colour-lightmode03;
+    }
+  }
+  .navbar-narrow {
+    background-color: $colour-lightmode01;
+  }
+  .navbar-narrow-border {
+    border: 2px solid $colour-lightmode02;
+  }
+  .dark-mode-toggle {
+    * {
+      color: $colour-lightmode02;
+    }
+  }
+  .dark-mode-toggle:hover {
+    * {
+      color: $colour-lightmode04;
+    }
+  }
+  .header-link:hover {
+    color: $colour-lightmode04;
+  }
+  .icon-link {
+    :first-child {
+      color: $colour-lightmode04;
+    }
+  }
+  .icon-link:hover {
+    :first-child {
+      color: $colour-lightmode05;
+    }
+  }
+  .work-card {
+    border: 2px solid $colour-lightmode02;
+    .work-card-text {
+      background-color: rgba($colour-lightmode01, 0.5);
+      .work-card-title {
+        color: $colour-lightmode04;
+      }
+      .work-card-category {
+        color: $colour-lightmode05;
+      }
+      .work-card-description {
+        color: $colour-lightmode02;
+      }
+    }
+  }
+  .card-link {
+    background-color: $colour-lightmode04;
+    color: $colour-lightmode01;
+
+    &:hover {
+      background-color: $colour-lightmode05;
+    }
+  }
+}
+.darkmode {
+  background-color: $colour-darkmode01;
+  * {
+    color: $colour-darkmode03;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $colour-darkmode05;
+  }
+  h1 {
+    color: $colour-darkmode04;
+  }
+  h2 {
+    color: $colour-darkmode02;
+  }
+  .home-mern-icons {
+    * {
+      color: $colour-darkmode02;
+    }
+  }
+  .header {
+    border-color: $colour-darkmode02;
+    .header-title {
+      #header-title-surname {
+        color: $colour-darkmode05;
+      }
+    }
+    .header-subtitle {
+      color: $colour-darkmode03;
+    }
+  }
+  .navbar-narrow {
+    background-color: $colour-darkmode01;
+  }
+  .navbar-narrow-border {
+    border: 2px solid $colour-darkmode02;
+  }
+  .dark-mode-toggle {
+    * {
+      color: $colour-darkmode02;
+    }
+  }
+  .dark-mode-toggle:hover {
+    * {
+      color: $colour-darkmode04;
+    }
+  }
+  .header-link:hover {
+    color: $colour-darkmode04;
+  }
+  .icon-link {
+    :first-child {
+      color: $colour-darkmode04;
+    }
+  }
+  .icon-link:hover {
+    :first-child {
+      color: $colour-darkmode05;
+    }
+  }
+  .work-card {
+    border: 2px solid $colour-darkmode02;
+    .work-card-text {
+      background-color: rgba($colour-darkmode01, 0.5);
+      .work-card-title {
+        color: $colour-darkmode04;
+      }
+      .work-card-category {
+        color: $colour-darkmode05;
+      }
+      .work-card-description {
+        color: $colour-darkmode03;
+      }
+    }
+  }
+  .card-link {
+    background-color: $colour-darkmode04;
+    color: $colour-darkmode02;
+
+    &:hover {
+      background-color: $colour-darkmode05;
+    }
+  }
+}

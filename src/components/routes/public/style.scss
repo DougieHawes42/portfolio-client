@@ -1,1 +1,71 @@
-@import "../../../styles/variables.scss";
+@import "../../../assets/styles/variables.scss";
+
+.home {
+  display: flex;
+  flex-direction: column;
+  margin-top: 7px;
+  .home-work-examples-container,
+  .home-links-box,
+  .home-mern-icons,
+  .home-title-box {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .home-work-examples-container {
+    display: grid;
+    grid-gap: 7px;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 14px 0;
+    // width: 100%;
+    padding-left: 7px;
+  }
+  .home-sigil {
+    .home-links-box {
+      display: flex;
+      width: 140px;
+    }
+    .home-mern-icons {
+      display: flex;
+      justify-content: space-between;
+      width: 300px;
+      * {
+        font-size: 60px;
+      }
+    }
+    .home-title-box {
+      container-type: inline-size;
+      margin-top: -21px;
+      min-width: 300px;
+      max-width: 500px;
+      .home-title {
+        font-size: 16cqw;
+        #home-title-surname {
+          color: $colour-lightmode05;
+        }
+      }
+      .home-subtitle {
+        font-size: 7cqw;
+        margin-top: -7px;
+      }
+    }
+  }
+}
+
+.work {
+  .work-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .home {
+    flex-direction: column-reverse;
+    .home-work-examples-container {
+      grid-template-columns: 1fr;
+      margin-right: 7px;
+    }
+  }
+}

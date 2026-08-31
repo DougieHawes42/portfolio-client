@@ -17,11 +17,12 @@ const Navbar = () => {
         <HeaderLink to="/contact" text="contact" />
         <HeaderLink to="/blog" text="blog" />
       </nav>
-      <nav className="navbar navbar-narrow">
+      <nav
+        className={`navbar navbar-narrow ${showLinks && "navbar-narrow-border"}`}>
         <div
           className="navbar-narrow-toggle"
           onClick={() => setShowLinks(!showLinks)}>
-          {showLinks ? <TiThMenu /> : <FaTimes />}
+          {!showLinks ? <TiThMenu /> : <FaTimes />}
         </div>
         {showLinks && (
           <>

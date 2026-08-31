@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 
-import "./styles/style.scss";
+import "./assets/styles/style.scss";
 
 import Header from "./components/layout/Header.js";
+import DarkModeToggle from "./components/layout/DarkModeToggle.js";
 
 import Home from "./components/routes/public/Home.js";
 import Work from "./components/routes/public/Work.js";
@@ -38,6 +40,10 @@ const App = () => {
         {/* private routes */}
         <Route path="/secretentrance/42/dashboard" element={<Dashboard />} />
       </Routes>
+      <DarkModeToggle
+        onClick={() => setDarkmodeOn(!darkmodeOn)}
+        icon={darkmodeOn ? <MdOutlineLightMode /> : <MdOutlineDarkMode />}
+      />
     </div>
   );
 };
