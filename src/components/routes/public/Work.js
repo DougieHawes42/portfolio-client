@@ -30,10 +30,10 @@ const Work = () => {
   const content = (
     <div className="work">
       <div className="work-grid">
-        {work.map(({ id, images, title, category, description }) => (
+        {work.map(({ _id, images, title, category, description }) => (
           <WorkCard
-            key={id}
-            id={id}
+            key={_id}
+            id={_id}
             image={`${process.env.REACT_APP_API_URL}/uploads/${images[0]}`}
             title={title}
             category={category}
