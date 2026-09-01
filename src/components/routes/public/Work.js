@@ -33,7 +33,7 @@ const Work = () => {
           <WorkCard
             key={_id}
             id={_id}
-            image={`${process.env.REACT_APP_API_URL}/uploads/${images[0]}`}
+            image={`${images && images[0]}`}
             title={title}
             category={category}
             description={description}

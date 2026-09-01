@@ -37,7 +37,7 @@ const WorkItem = () => {
           <div className="work-item-image-container">
             <img
               className="work-item-image"
-              src={`${process.env.REACT_APP_API_URL}/uploads/${workItem.images?.[imageIndex]}`}
+              src={`${workItem.images && workItem.images[imageIndex]}`}
               alt=""
             />
             <div className="work-image-toggle">
