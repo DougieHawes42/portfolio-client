@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import { motion } from "motion/react";
+
 import { CardLink } from "./links.js";
 
 import "./style.scss";
@@ -16,6 +19,36 @@ export const WorkCard = ({ image, title, category, id, description }) => (
   </div>
 );
 
-export const BlogCard = ({ title, subtitle, date, image, text, onClick }) => (
-  <div className="card blog-card"></div>
+export const SkillCard = ({ name, logo, level }) => (
+  <motion.div
+    className="card skill-card"
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{
+      duration: 0.3,
+      ease: "easeOut",
+    }}>
+    <div className="skill-card-logo-container">{logo}</div>
+    <div className="skill-card-text">
+      <h3 className="skill-card-name">{name}</h3>
+      <p className="skill-card-level">{level}</p>
+    </div>
+  </motion.div>
+);
+
+export const BlogCard = ({ id, title, subtitle, date, images, text, tags }) => (
+  <div className="card blog-card">
+    <Link to={`/blog/${id}`}>
+      <div className="blog-card-image-container">
+        <img className="blog-card-image" src={images} alt={title} />
+      </div>
+      <div className="blog-card-text">
+        <h3 className="blog-card-title">{title}</h3>
+        <p className="blog-card-subtitle">{subtitle}</p>
+        <div className="blog-card-tags">{tags}</div>
+        <p className="blog-card-date">{date}</p>
+      </div>
+      <div className="blog-card-body">{text}</div>
+    </Link>
+  </div>
 );

@@ -33,7 +33,7 @@ const Work = () => {
           <WorkCard
             key={_id}
             id={_id}
-            image={`${images && images[0]}`}
+            image={`${images?.[0]}`}
             title={title}
             category={category}
             description={description}

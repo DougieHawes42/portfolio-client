@@ -56,6 +56,101 @@
   }
 }
 
+.skill-card {
+  cursor: pointer;
+  margin-bottom: 14px;
+  max-width: 300px;
+  width: 100%;
+  .skill-card-logo-container {
+    margin-bottom: -7px;
+    text-align: center;
+    * {
+      font-size: 70px;
+    }
+  }
+  .skill-card-text {
+    .skill-card-name,
+    .skill-card-level {
+      text-align: center;
+    }
+    .skill-card-name {
+      font-size: 42px;
+      font-weight: bold;
+    }
+    .skill-card-level {
+      font-size: 21px;
+      font-weight: bold;
+    }
+  }
+}
+
+.blog-card {
+  cursor: pointer;
+  min-width: 300px;
+  max-width: 460px;
+  position: relative;
+  width: 100%;
+  .blog-card-image-container {
+    max-height: 140px;
+    overflow: hidden;
+    width: 100%;
+    .blog-card-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .blog-card-text {
+    left: 50%;
+    padding: 7px;
+    position: absolute;
+    transform: translateX(-50%);
+    top: 70px;
+    width: 60%;
+
+    transition: 0.3s ease-in-out opacity;
+    .blog-card-title,
+    .blog-card-subtitle,
+    .blog-card-date {
+      text-align: center;
+    }
+    .blog-card-title {
+      font-size: 35px;
+      font-weight: bold;
+      margin-bottom: -7px;
+    }
+    .blog-card-subtitle {
+      font-size: 21px;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+    .blog-card-date {
+      font-size: 14px;
+      margin-bottom: 7px;
+      padding-top: 21px;
+      text-align: center;
+    }
+    .blog-card-tags {
+      display: flex;
+      font-size: 14px;
+      margin-bottom: 7px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+  }
+  .blog-card-body {
+    font-size: 16px;
+    margin-bottom: 7px;
+    max-height: 210px;
+    min-height: 210px;
+    overflow: hidden;
+    padding-top: 35px;
+  }
+}
+
 .card-link {
   padding: 7px;
   max-width: 180px;

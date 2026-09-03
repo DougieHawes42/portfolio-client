@@ -116,6 +116,43 @@ h3 {
       }
     }
   }
+  .skill-card {
+    .skill-card-logo-container {
+      * {
+        color: $colour-lightmode04;
+      }
+    }
+    .skill-card-text {
+      .skill-card-name {
+        color: $colour-lightmode03;
+      }
+      .skill-card-level {
+        color: $colour-lightmode05;
+      }
+    }
+  }
+  .blog-card {
+    .blog-card-text {
+      background-color: $colour-lightmode01;
+      .blog-card-title {
+        color: $colour-lightmode04;
+      }
+      .blog-card-tags {
+        * {
+          color: $colour-lightmode05;
+        }
+      }
+      .blog-card-subtitle {
+        color: $colour-lightmode05;
+      }
+      .blog-card-date {
+        color: $colour-lightmode02;
+      }
+    }
+    .blog-card-body {
+      color: $colour-lightmode02;
+    }
+  }
   .card-link {
     background-color: $colour-lightmode04;
     color: $colour-lightmode01;
@@ -154,6 +191,21 @@ h3 {
         background-color: $colour-lightmode05;
         color: $colour-lightmode04;
       }
+    }
+  }
+  .blog-item {
+    .blog-item-header {
+      .blog-item-date {
+        color: $colour-lightmode04;
+      }
+      .blog-item-tags {
+        span {
+          color: $colour-lightmode05;
+        }
+      }
+    }
+    .blog-item-text {
+      color: $colour-lightmode02;
     }
   }
 }
@@ -231,6 +283,43 @@ h3 {
       }
     }
   }
+  .skill-card {
+    .skill-card-logo-container {
+      * {
+        color: $colour-darkmode04;
+      }
+    }
+    .skill-card-text {
+      .skill-card-name {
+        color: $colour-darkmode03;
+      }
+      .skill-card-level {
+        color: $colour-darkmode05;
+      }
+    }
+  }
+  .blog-card {
+    .blog-card-text {
+      background-color: $colour-darkmode01;
+      .blog-card-title {
+        color: $colour-darkmode04;
+      }
+      .blog-card-tags {
+        * {
+          color: $colour-darkmode05;
+        }
+      }
+      .blog-card-subtitle {
+        color: $colour-darkmode05;
+      }
+      .blog-card-date {
+        color: $colour-darkmode02;
+      }
+    }
+    .blog-card-body {
+      color: $colour-darkmode02;
+    }
+  }
   .card-link {
     background-color: $colour-darkmode04;
     color: $colour-darkmode02;
@@ -269,6 +358,21 @@ h3 {
         background-color: $colour-darkmode05;
         color: $colour-darkmode04;
       }
+    }
+  }
+  .blog-item {
+    .blog-item-header {
+      .blog-item-date {
+        color: $colour-darkmode04;
+      }
+      .blog-item-tags {
+        span {
+          color: $colour-darkmode05;
+        }
+      }
+    }
+    .blog-item-text {
+      color: $colour-darkmode02;
     }
   }
 }

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "motion/react";
 
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -10,7 +11,14 @@ import { IconLink } from "../utils/links.js";
 
 const Header = () => {
   return (
-    <header className="header">
+    <motion.header
+      className="header"
+      initial={{ y: -70 }}
+      animate={{ y: 0 }}
+      transition={{
+        duration: 0.3,
+        ease: "easeOut",
+      }}>
       <div className="header-left">
         <Link to="/">
           <div className="header-title-container">
@@ -29,7 +37,7 @@ const Header = () => {
         </div>
       </div>
       <Navbar />
-    </header>
+    </motion.header>
   );
 };
 
