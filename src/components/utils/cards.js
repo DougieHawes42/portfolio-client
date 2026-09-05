@@ -19,9 +19,10 @@ export const WorkCard = ({ image, title, category, id, description }) => (
   </div>
 );
 
-export const SkillCard = ({ name, logo, level }) => (
+export const SkillCard = ({ onClick, name, logo, level }) => (
   <motion.div
     className="card skill-card"
+    onClick={onClick}
     initial={{ opacity: 0, y: 30 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{

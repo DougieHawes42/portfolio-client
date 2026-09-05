@@ -146,6 +146,83 @@
   gap: 7px;
   justify-content: space-around;
   overflow: hidden;
+  .skill-modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.42);
+
+    .skill-modal {
+      border-style: solid;
+      border-width: 2px;
+      max-width: 300px;
+      padding: 14px;
+      text-align: center;
+      .skill-modal-logo {
+        * {
+          font-size: 70px;
+        }
+      }
+      .skill-modal-title {
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .skill-modal-level {
+        font-size: 21px;
+        font-weight: bold;
+        margin-bottom: 7px;
+      }
+      .skill-modal-description {
+        font-size: 18px;
+        margin-bottom: 14px;
+        min-height: 140px;
+      }
+      .skill-modal-button {
+        margin-top: 14px;
+        padding: 7px 14px;
+        border: none;
+        cursor: pointer;
+        font-size: 21px;
+        width: 100%;
+        text-transform: uppercase;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
+      }
+    }
+  }
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  justify-content: center;
+  .contact-links-container {
+    .contact-links-title {
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .contact-links {
+      display: flex;
+      gap: 7px;
+      max-width: 300px;
+      min-width: 300px;
+    }
+  }
+  .contact-form {
+    min-width: 300px;
+    width: 60%;
+    .message-status {
+      margin-top: 7px;
+      font-size: 21px;
+    }
+  }
 }
 
 .blog-item {

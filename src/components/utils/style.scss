@@ -1,5 +1,34 @@
 @import "../../assets/styles/variables.scss";
 
+.text-input-label {
+  display: block;
+  font-family: $font1;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+.text-input-field {
+  display: block;
+  font-size: 21px;
+  width: 100%;
+  padding: 7px;
+  margin-bottom: 14px;
+  box-sizing: border-box;
+}
+.text-area-field {
+  min-height: 210px;
+}
+
+.submit-button {
+  border: none;
+  cursor: pointer;
+  font-size: 28px;
+  padding: 7px;
+  width: 100%;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out background-color;
+}
+
 .work-card {
   cursor: pointer;
   min-width: 300px;

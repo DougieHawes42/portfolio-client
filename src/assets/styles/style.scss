@@ -11,9 +11,6 @@
 ::-webkit-scrollbar {
   width: 7px;
 }
-::-webkit-scrollbar-thumb {
-  background: red;
-}
 
 h1,
 h2,
@@ -86,6 +83,40 @@ h3 {
   .dark-mode-toggle:hover {
     * {
       color: $colour-lightmode04;
+    }
+  }
+  .skills-container {
+    .skill-modal-container {
+      .skill-modal {
+        background-color: $colour-lightmode01;
+        border-color: $colour-lightmode04;
+        .skill-modal-logo {
+          * {
+            color: $colour-lightmode04;
+          }
+        }
+        .skill-modal-level {
+          color: $colour-lightmode05;
+        }
+        .skill-modal-button {
+          background-color: $colour-lightmode04;
+          color: $colour-lightmode01;
+          &:hover {
+            background-color: $colour-lightmode05;
+            color: $colour-lightmode04;
+          }
+        }
+      }
+    }
+  }
+  .contact-container {
+    .contact-form {
+      .message-status {
+        color: $colour-lightmode05;
+      }
+    }
+    .contact-links-title {
+      color: $colour-lightmode05;
     }
   }
   .header-link:hover {
@@ -208,6 +239,20 @@ h3 {
       color: $colour-lightmode02;
     }
   }
+  .text-input-label {
+    color: $colour-lightmode05;
+  }
+  .text-input-field {
+    color: $colour-lightmode02;
+  }
+  .submit-button {
+    color: $colour-lightmode01;
+    background-color: $colour-lightmode04;
+
+    &:hover {
+      background-color: $colour-lightmode05;
+    }
+  }
 }
 .darkmode {
   background-color: $colour-darkmode01;
@@ -253,6 +298,40 @@ h3 {
   .dark-mode-toggle:hover {
     * {
       color: $colour-darkmode04;
+    }
+  }
+  .skills-container {
+    .skill-modal-container {
+      .skill-modal {
+        background-color: $colour-darkmode01;
+        border-color: $colour-darkmode04;
+        .skill-modal-logo {
+          * {
+            color: $colour-darkmode04;
+          }
+        }
+        .skill-modal-level {
+          color: $colour-darkmode05;
+        }
+        .skill-modal-button {
+          background-color: $colour-darkmode04;
+          color: $colour-darkmode01;
+          &:hover {
+            background-color: $colour-darkmode05;
+            color: $colour-darkmode04;
+          }
+        }
+      }
+    }
+  }
+  .contact-container {
+    .contact-form {
+      .message-status {
+        color: $colour-darkmode05;
+      }
+    }
+    .contact-links-title {
+      color: $colour-darkmode05;
     }
   }
   .header-link:hover {
@@ -373,6 +452,20 @@ h3 {
     }
     .blog-item-text {
       color: $colour-darkmode02;
+    }
+  }
+  .text-input-label {
+    color: $colour-darkmode05;
+  }
+  .text-input-field {
+    color: $colour-darkmode01;
+  }
+  .submit-button {
+    color: $colour-darkmode01;
+    background-color: $colour-darkmode04;
+
+    &:hover {
+      background-color: $colour-darkmode05;
     }
   }
 }
