@@ -58,6 +58,9 @@ h3 {
       color: $colour-lightmode02;
     }
   }
+  .home-work-example-title {
+    color: $colour-lightmode05;
+  }
   .header {
     border-color: $colour-lightmode02;
     .header-title {
@@ -72,6 +75,9 @@ h3 {
   .navbar-narrow {
     background-color: $colour-lightmode01;
   }
+  .navbar-narrow-links {
+    background-color: $colour-lightmode01;
+  }
   .navbar-narrow-border {
     border: 2px solid $colour-lightmode02;
   }
@@ -83,6 +89,20 @@ h3 {
   .dark-mode-toggle:hover {
     * {
       color: $colour-lightmode04;
+    }
+  }
+  #home-title-surname {
+    color: $colour-lightmode05;
+  }
+  .work-grid-selection {
+    .work-grid-selection-item {
+      color: $colour-lightmode04;
+      &:hover {
+        color: $colour-lightmode05;
+      }
+    }
+    .work-grid-selection-item.selected {
+      border-bottom: 4px solid $colour-lightmode05;
     }
   }
   .skills-container {
@@ -109,6 +129,11 @@ h3 {
       }
     }
   }
+  .file-input-container {
+    .file-input-label {
+      color: $colour-lightmode05;
+    }
+  }
   .contact-container {
     .contact-form {
       .message-status {
@@ -133,14 +158,21 @@ h3 {
     }
   }
   .work-card {
-    border: 2px solid $colour-lightmode02;
+    .work-card-category {
+      color: $colour-lightmode05;
+    }
+    .work-card-image-container {
+      border: 2px solid $colour-lightmode02;
+    }
     .work-card-text {
-      background-color: rgba($colour-lightmode01, 0.5);
+      background-color: rgba($colour-lightmode01, 0.42);
       .work-card-title {
-        color: $colour-lightmode04;
-      }
-      .work-card-category {
-        color: $colour-lightmode05;
+        color: $colour-lightmode01;
+        text-shadow:
+          2px 2px 0 $colour-lightmode04,
+          2px -2px 0 $colour-lightmode04,
+          -2px 2px 0 $colour-lightmode04,
+          -2px -2px 0 $colour-lightmode04;
       }
       .work-card-description {
         color: $colour-lightmode02;
@@ -186,6 +218,7 @@ h3 {
   }
   .card-link {
     background-color: $colour-lightmode04;
+    border: 2px solid $colour-lightmode03;
     color: $colour-lightmode01;
 
     &:hover {
@@ -273,6 +306,12 @@ h3 {
       color: $colour-darkmode02;
     }
   }
+  .home-work-examples-header {
+    color: $colour-darkmode04;
+  }
+  .home-work-example-title {
+    color: $colour-darkmode05;
+  }
   .header {
     border-color: $colour-darkmode02;
     .header-title {
@@ -287,6 +326,9 @@ h3 {
   .navbar-narrow {
     background-color: $colour-darkmode01;
   }
+  .navbar-narrow-links {
+    background-color: $colour-darkmode01;
+  }
   .navbar-narrow-border {
     border: 2px solid $colour-darkmode02;
   }
@@ -298,6 +340,20 @@ h3 {
   .dark-mode-toggle:hover {
     * {
       color: $colour-darkmode04;
+    }
+  }
+  #home-title-surname {
+    color: $colour-darkmode05;
+  }
+  .work-grid-selection {
+    .work-grid-selection-item {
+      color: $colour-darkmode04;
+      &:hover {
+        color: $colour-darkmode05;
+      }
+    }
+    .work-grid-selection-item.selected {
+      border-bottom: 4px solid $colour-darkmode05;
     }
   }
   .skills-container {
@@ -324,6 +380,11 @@ h3 {
       }
     }
   }
+  .file-input-container {
+    .file-input-label {
+      color: $colour-darkmode05;
+    }
+  }
   .contact-container {
     .contact-form {
       .message-status {
@@ -348,14 +409,22 @@ h3 {
     }
   }
   .work-card {
-    border: 2px solid $colour-darkmode02;
+    .work-card-category {
+      color: $colour-darkmode05;
+    }
+    .work-card-image-container {
+      border: 2px solid $colour-darkmode02;
+    }
     .work-card-text {
-      background-color: rgba($colour-darkmode01, 0.5);
+      background-color: rgba($colour-darkmode01, 0.42);
+
       .work-card-title {
-        color: $colour-darkmode04;
-      }
-      .work-card-category {
-        color: $colour-darkmode05;
+        color: $colour-darkmode01;
+        text-shadow:
+          2px 2px 0 $colour-darkmode04,
+          2px -2px 0 $colour-darkmode04,
+          -2px 2px 0 $colour-darkmode04,
+          -2px -2px 0 $colour-darkmode04;
       }
       .work-card-description {
         color: $colour-darkmode03;
@@ -401,6 +470,7 @@ h3 {
   }
   .card-link {
     background-color: $colour-darkmode04;
+    border: 2px solid $colour-darkmode03;
     color: $colour-darkmode02;
 
     &:hover {

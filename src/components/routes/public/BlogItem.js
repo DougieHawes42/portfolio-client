@@ -1,6 +1,6 @@
 import axios from "axios";
-
 import { useState, useEffect } from "react";
+import { motion } from "motion/react";
 import { useParams } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -33,7 +33,11 @@ const BlogItem = () => {
   const content = (
     <>
       {blogItem && (
-        <div className="blog-item">
+        <motion.div
+          className="blog-item"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}>
           <div className="blog-item-header">
             <p className="blog-item-subtitle">{blogItem.subtitle}</p>
             <p className="blog-item-date">
@@ -41,7 +45,7 @@ const BlogItem = () => {
             </p>
             <div className="blog-item-tags">
               {blogItem.tags?.map((t) => (
-                <span key={t}>#{t} </span>
+                <span key={t}>#{t}, </span>
               ))}
             </div>
           </div>
@@ -75,7 +79,7 @@ const BlogItem = () => {
             </div>
           </div>
           <div className="blog-item-text">{blogItem.text}</div>
-        </div>
+        </motion.div>
       )}
     </>
   );

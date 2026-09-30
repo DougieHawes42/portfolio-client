@@ -10,6 +10,10 @@ import { WorkCard } from "../../utils/cards.js";
 const Work = () => {
   const [work, setWork] = useState([]);
 
+  const [appsSelected, setAppsSelected] = useState(true);
+  const [sitesSelected, setSitesSelected] = useState(true);
+  const [gamesSelected, setGamesSelected] = useState(true);
+
   useEffect(() => {
     const getWork = async () => {
       try {
@@ -26,19 +30,74 @@ const Work = () => {
     getWork();
   }, []);
 
+  const handleSelection = (category) => {
+    // convert lower to a switch statement for better readability
+    switch (category) {
+      case "Apps":
+        if (appsSelected && (sitesSelected || gamesSelected)) {
+          setSitesSelected(false);
+          setGamesSelected(false);
+        } else {
+          setAppsSelected(true);
+        }
+        break;
+      case "Sites":
+        if (sitesSelected && (appsSelected || gamesSelected)) {
+          setAppsSelected(false);
+          setGamesSelected(false);
+        } else {
+          setSitesSelected(true);
+        }
+        break;
+      case "Games":
+        if (gamesSelected && (appsSelected || sitesSelected)) {
+          setAppsSelected(false);
+          setSitesSelected(false);
+        } else {
+          setGamesSelected(true);
+        }
+        break;
+      default:
+        break;
+    }
+  };
+
   const content = (
     <div className="work">
+      <div className="work-grid-selection">
+        <div
+          className={`work-grid-selection-item ${appsSelected && "selected"}`}
+          onClick={() => handleSelection("Apps")}>
+          Apps
+        </div>
+        <div
+          className={`work-grid-selection-item ${sitesSelected && "selected"}`}
+          onClick={() => handleSelection("Sites")}>
+          Sites
+        </div>
+        <div
+          className={`work-grid-selection-item ${gamesSelected && "selected"}`}
+          onClick={() => handleSelection("Games")}>
+          Games
+        </div>
+      </div>
       <div className="work-grid">
-        {work.map(({ _id, images, title, category, description }) => (
-          <WorkCard
-            key={_id}
-            id={_id}
-            image={`${images?.[0]}`}
-            title={title}
-            category={category}
-            description={description}
-          />
-        ))}
+        {work
+          .filter(
+            ({ category }) =>
+              (category === "App" && appsSelected) ||
+              (category === "Site" && sitesSelected) ||
+              (category === "Game" && gamesSelected),
+          )
+          .map(({ _id, images, title, category, description }) => (
+            <WorkCard
+              key={_id}
+              id={_id}
+              image={`${images?.[0]}`}
+              title={title}
+              description={description}
+            />
+          ))}
       </div>
     </div>
   );

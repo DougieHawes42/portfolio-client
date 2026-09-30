@@ -4,7 +4,7 @@ import klimptEImage from "./assets/media/klimpt-e.png";
 export const work = [
   {
     id: 1,
-    image: umbrellaAcademyChatbotImage,
+    images: [umbrellaAcademyChatbotImage],
     category: "app",
     title: "Umbrella Academy Chatbot",
     description: "A chatbot project based on the Umbrella Academy series.",
@@ -13,7 +13,7 @@ export const work = [
   },
   {
     id: 2,
-    image: klimptEImage,
+    images: [klimptEImage],
     category: "app",
     title: "Klimpt-E",
     description: "An ai image generation project.",
@@ -22,6 +22,7 @@ export const work = [
   },
   {
     id: 3,
+    images: [umbrellaAcademyChatbotImage],
     category: "site",
     title: "DooHickey",
     description: "A mockup fullstack site for a fictional cafe.",
@@ -29,6 +30,7 @@ export const work = [
   },
   {
     id: 4,
+    images: [umbrellaAcademyChatbotImage],
     category: "game",
     title: "RPSLSRR",
     description:

@@ -12,6 +12,7 @@ import {
   SiReact,
   SiNodedotjs,
   SiPython,
+  SiScratch,
 } from "react-icons/si";
 
 import { PublicRoute } from "../../utils/routes.js";
@@ -81,6 +82,12 @@ const Skills = () => {
       logo: <SiPython />,
       level: "Skilled",
       description: "General-purpose programming language",
+    },
+    {
+      name: "Sratch",
+      logo: <SiScratch />,
+      level: "Skilled",
+      description: "Visual programming language for beginners",
     },
   ];
 

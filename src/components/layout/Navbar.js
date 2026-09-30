@@ -25,7 +25,7 @@ const Navbar = () => {
           {!showLinks ? <TiThMenu /> : <FaTimes />}
         </div>
         {showLinks && (
-          <>
+          <div className="navbar-narrow-links">
             <HeaderLink
               onClick={() => setShowLinks(false)}
               to="/work"
@@ -46,7 +46,7 @@ const Navbar = () => {
               to="/blog"
               text="blog"
             />
-          </>
+          </div>
         )}
       </nav>
     </>

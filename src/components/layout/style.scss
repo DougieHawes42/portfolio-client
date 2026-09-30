@@ -33,8 +33,6 @@
 .navbar-narrow {
   display: none;
   flex-direction: column;
-  min-width: 140px;
-  padding: 7px;
   right: 2%;
   position: absolute;
   top: 7px;
@@ -43,6 +41,13 @@
     text-align: right;
     font-size: 35px;
   }
+  .navbar-narrow-links {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 7px;
+    width: 100%;
+  }
 }
 
 .dark-mode-toggle {
@@ -50,10 +55,20 @@
   cursor: pointer;
   font-size: 35px;
   position: absolute;
-  right: 2%;
+  right: 3%;
 
   * {
     transition: 0.3s ease-in-out color;
+  }
+}
+
+.loader-container {
+  text-align: center;
+  .loader-text {
+    color: $colour-lightmode05;
+    font-size: 21px;
+    font-weight: bold;
+    margin-top: -35px;
   }
 }
 

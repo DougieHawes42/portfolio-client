@@ -1,1 +1,33 @@
 @import "../../../assets/styles/variables.scss";
+
+.dashboard-forms-container {
+  .dashboard-form-toggle,
+  .dashboard-form {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    max-width: 600px;
+  }
+  .dashboard-form-toggle {
+    display: flex;
+    gap: 7px;
+    margin-bottom: 7px;
+    .dashboard-form-toggle-button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-size: 21px;
+      width: 100%;
+    }
+    .dashboard-form-toggle-button.active {
+      border-bottom: 2px solid black;
+    }
+  }
+  .dashboard-signout-button {
+    color: black;
+    display: block;
+    margin: 7px auto;
+    padding: 7px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+}

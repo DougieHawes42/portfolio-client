@@ -25,7 +25,6 @@ const Header = () => {
             <h1 className="header-title">
               Doug<span id="header-title-surname">Hawes</span>
             </h1>
-            <p className="header-subtitle">Fullstack Web Developer</p>
           </div>
         </Link>
         <div className="header-icon-links">

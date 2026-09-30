@@ -1,5 +1,10 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import {
+  PrivateRoute,
+  PublicRoute,
+  AuthRoute,
+} from "./components/utils/routes.js";
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 
 import "./assets/styles/style.scss";
@@ -36,9 +41,19 @@ const App = () => {
         <Route path="/work/:id" element={<WorkItem />} />
         <Route path="/blog/:id" element={<BlogItem />} />
         {/* auth routes */}
-        <Route path="/secretentrance/42/login" element={<Login />} />
+        <Route element={<AuthRoute />}>
+          <Route
+            path={`${process.env.REACT_APP_PRIVATE_ROUTE}/login`}
+            element={<Login />}
+          />
+        </Route>
         {/* private routes */}
-        <Route path="/secretentrance/42/dashboard" element={<Dashboard />} />
+        <Route element={<PrivateRoute />}>
+          <Route
+            path={`${process.env.REACT_APP_PRIVATE_ROUTE}/dashboard`}
+            element={<Dashboard />}
+          />
+        </Route>
       </Routes>
       <DarkModeToggle
         onClick={() => setDarkmodeOn(!darkmodeOn)}

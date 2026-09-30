@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { motion } from "motion/react";
 import {
   FaGithub,
   FaLinkedin,
@@ -21,7 +22,8 @@ import { SubmitButton } from "../../utils/buttons.js";
 const Contact = () => {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
-  const [failed, setFailed] = useState(false);
+
+  const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -39,7 +41,6 @@ const Contact = () => {
         formData,
       );
 
-      console.log(response.data);
       setFormData({
         name: "",
         email: "",
@@ -51,10 +52,10 @@ const Contact = () => {
         setSent(false);
       }, 4200);
     } catch (error) {
-      console.error(error);
-      setFailed(true);
+      console.error(error.message);
+      setError("Failed to send message.");
       setTimeout(() => {
-        setFailed(false);
+        setError(null);
       }, 4200);
     } finally {
       setSending(false);
@@ -62,7 +63,11 @@ const Contact = () => {
   };
 
   const content = (
-    <div className="contact-container">
+    <motion.div
+      className="contact-container"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}>
       <div className="contact-form">
         <form>
           <TextInput
@@ -94,7 +99,7 @@ const Contact = () => {
         </form>
         {sending && <p className="message-status">Sending...</p>}
         {sent && <p className="message-status">Message sent successfully!</p>}
-        {failed && <p className="message-status">Failed to send message.</p>}
+        {error && <p className="message-status">{error}</p>}
       </div>
       <div className="contact-links-container">
         <h4 className="contact-links-title">Contact Me Directly</h4>
@@ -152,7 +157,7 @@ const Contact = () => {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 
   return <PublicRoute content={content} title="contact" />;

@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
@@ -22,6 +22,7 @@ const WorkItem = () => {
         );
 
         setWorkItem(result.data);
+        console.log(result.data);
       } catch (error) {
         console.error(error);
       }
@@ -31,7 +32,11 @@ const WorkItem = () => {
   }, []);
 
   const content = (
-    <div className="work-item">
+    <motion.div
+      className="work-item"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}>
       <div className="work-item-columns">
         <div className="work-item-column">
           <div className="work-item-image-container">
@@ -93,7 +98,7 @@ const WorkItem = () => {
           view
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 
   return (

@@ -1,29 +1,62 @@
 import axios from "axios";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./style.scss";
 
-import { AuthRoute } from "../../utils/routes.js";
+import { PublicRoute } from "../../utils/routes.js";
+import { SubmitButton } from "../../utils/buttons.js";
+import { TextInput } from "../../utils/inputs.js";
 
 const Login = () => {
-  const [message, setMessage] = useState("");
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
 
-  useEffect(() => {
-    const getMessage = async () => {
-      const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/user`,
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_URL}/api/user/signin`,
+        formData,
       );
 
-      setMessage(response);
-    };
+      if (!response.data.token) {
+        return;
+      }
 
-    getMessage();
-  }, []);
+      localStorage.setItem("token", response.data.token);
 
-  const content = <>{message}</>;
+      navigate(`${process.env.REACT_APP_PRIVATE_ROUTE}/dashboard`);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-  return <AuthRoute content={content} title="login" />;
+  const content = (
+    <>
+      <TextInput
+        label="Email"
+        type="email"
+        value={formData.email}
+        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+      />
+      <TextInput
+        label="Password"
+        type="password"
+        value={formData.password}
+        onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+      />
+      <SubmitButton onClick={handleSubmit} label="Login" />
+    </>
+  );
+
+  return <PublicRoute content={content} title="login" />;
 };
 
 export default Login;

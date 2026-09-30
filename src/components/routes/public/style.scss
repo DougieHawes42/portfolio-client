@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   margin-top: 7px;
-  .home-work-examples-container,
+  .home-work-examples,
   .home-links-box,
   .home-mern-icons,
   .home-title-box {
@@ -12,18 +12,26 @@
     text-align: center;
   }
   .home-work-examples-container {
-    display: grid;
-    grid-gap: 7px;
-    grid-template-columns: repeat(3, 1fr);
-    margin: 14px 0;
-    // width: 100%;
-    padding-left: 7px;
+    margin: 21px auto;
+    max-width: 1200px;
+    .home-work-examples {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+      justify-content: center;
+      .home-work-example {
+        .home-work-example-title {
+          font-size: 28px;
+          font-weight: bold;
+          margin-bottom: 7px;
+        }
+      }
+    }
   }
   .home-sigil {
-    .home-links-box {
-      display: flex;
-      width: 140px;
-    }
+    margin: 14px auto 0 auto;
+    max-width: 600px;
+    width: 100%;
     .home-mern-icons {
       display: flex;
       justify-content: space-between;
@@ -32,26 +40,35 @@
         font-size: 60px;
       }
     }
-    .home-title-box {
-      container-type: inline-size;
-      margin-top: -21px;
-      min-width: 300px;
-      max-width: 500px;
-      .home-title {
-        font-size: 16cqw;
-        #home-title-surname {
-          color: $colour-lightmode05;
-        }
-      }
-      .home-subtitle {
-        font-size: 7cqw;
-        margin-top: -7px;
-      }
+    .home-title {
+      font-size: 70px;
+      margin-top: -14px;
+      text-align: center;
     }
   }
 }
 
 .work {
+  .work-grid-selection {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 14px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    max-width: 600px;
+    width: 100%;
+    .work-grid-selection-item {
+      border-bottom: 4px solid transparent;
+      cursor: pointer;
+      font-weight: bold;
+      padding: 7px 14px;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 28px;
+      transition: color 0.3s ease;
+      width: 100%;
+    }
+  }
   .work-grid {
     display: flex;
     flex-wrap: wrap;
@@ -115,6 +132,9 @@
     .work-item-description {
       text-align: justify;
       margin-top: 7px;
+      max-height: 28vw;
+      overflow: scroll;
+      padding-right: 7px;
     }
   }
   .work-item-links-container {
@@ -296,10 +316,19 @@
 
 @media only screen and (max-width: 767px) {
   .home {
-    flex-direction: column-reverse;
-    .home-work-examples-container {
-      grid-template-columns: 1fr;
-      margin-right: 7px;
+    .home-sigil {
+      .home-mern-icons {
+        width: 210px;
+        * {
+          font-size: 42px;
+        }
+      }
+      .home-title {
+        font-size: 50px;
+      }
     }
+  }
+  .home-work-examples-container {
+    padding-right: 7px;
   }
 }

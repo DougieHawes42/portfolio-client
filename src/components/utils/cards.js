@@ -5,18 +5,25 @@ import { CardLink } from "./links.js";
 
 import "./style.scss";
 
-export const WorkCard = ({ image, title, category, id, description }) => (
-  <div className="card work-card">
+export const WorkCard = ({ category, image, title, id, description }) => (
+  // use motion to zoom in on render using size
+  <motion.div
+    className="card work-card"
+    initial={{ scale: 0 }}
+    animate={{ scale: 1 }}
+    transition={{
+      duration: 0.6,
+      ease: "easeOut",
+    }}>
     <div className="work-card-image-container">
       <img className="work-card-image" src={image} alt={title} />
     </div>
     <div className="work-card-text">
       <h3 className="work-card-title">{title}</h3>
-      <p className="work-card-category">{category}</p>
       <p className="work-card-description">{description}</p>
-      <CardLink to={`/work/${id}`} text="details" />
+      <CardLink to={`/work/${id}`} text="see more" />
     </div>
-  </div>
+  </motion.div>
 );
 
 export const SkillCard = ({ onClick, name, logo, level }) => (
@@ -38,7 +45,14 @@ export const SkillCard = ({ onClick, name, logo, level }) => (
 );
 
 export const BlogCard = ({ id, title, subtitle, date, images, text, tags }) => (
-  <div className="card blog-card">
+  <motion.div
+    className="card blog-card"
+    initial={{ scale: 0 }}
+    animate={{ scale: 1 }}
+    transition={{
+      duration: 0.6,
+      ease: "easeOut",
+    }}>
     <Link to={`/blog/${id}`}>
       <div className="blog-card-image-container">
         <img className="blog-card-image" src={images} alt={title} />
@@ -49,7 +63,10 @@ export const BlogCard = ({ id, title, subtitle, date, images, text, tags }) => (
         <div className="blog-card-tags">{tags}</div>
         <p className="blog-card-date">{date}</p>
       </div>
-      <div className="blog-card-body">{text}</div>
+      <div
+        className="blog-card-body"
+        dangerouslySetInnerHTML={{ __html: text }}
+      />
     </Link>
-  </div>
+  </motion.div>
 );
