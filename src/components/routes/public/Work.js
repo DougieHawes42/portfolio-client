@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 
 import "./style.scss";
 
+import Loader from "../../layout/Loader.js";
+
 import { PublicRoute } from "../../utils/routes.js";
 import { WorkCard } from "../../utils/cards.js";
 
@@ -31,7 +33,6 @@ const Work = () => {
   }, []);
 
   const handleSelection = (category) => {
-    // convert lower to a switch statement for better readability
     switch (category) {
       case "Apps":
         if (appsSelected && (sitesSelected || gamesSelected)) {
@@ -82,22 +83,26 @@ const Work = () => {
         </div>
       </div>
       <div className="work-grid">
-        {work
-          .filter(
-            ({ category }) =>
-              (category === "App" && appsSelected) ||
-              (category === "Site" && sitesSelected) ||
-              (category === "Game" && gamesSelected),
-          )
-          .map(({ _id, images, title, category, description }) => (
-            <WorkCard
-              key={_id}
-              id={_id}
-              image={`${images?.[0]}`}
-              title={title}
-              description={description}
-            />
-          ))}
+        {work.length > 0 ? (
+          work
+            .filter(
+              ({ category }) =>
+                (category === "App" && appsSelected) ||
+                (category === "Site" && sitesSelected) ||
+                (category === "Game" && gamesSelected),
+            )
+            .map(({ _id, images, title, category, description }) => (
+              <WorkCard
+                key={_id}
+                id={_id}
+                image={`${images?.[0]}`}
+                title={title}
+                description={description}
+              />
+            ))
+        ) : (
+          <Loader />
+        )}
       </div>
     </div>
   );

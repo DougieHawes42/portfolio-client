@@ -27,23 +27,26 @@ const Blog = () => {
   }, []);
 
   const content = (
-    <>
+    <div className="blog-container">
       {blog &&
-        blog.map(({ _id, title, subtitle, createdAt, text, tags, images }) => (
-          <BlogCard
-            key={_id}
-            id={_id}
-            title={title}
-            subtitle={subtitle}
-            date={new Date(createdAt).toLocaleDateString()}
-            text={text}
-            tags={tags.map((t) => (
-              <div key={t}>#{t}, </div>
-            ))}
-            images={`${images?.[0]}`}
-          />
-        ))}
-    </>
+        blog
+          .slice()
+          .reverse()
+          .map(({ _id, title, subtitle, createdAt, text, tags, images }) => (
+            <BlogCard
+              key={_id}
+              id={_id}
+              title={title}
+              subtitle={subtitle}
+              date={new Date(createdAt).toLocaleDateString()}
+              text={text}
+              tags={tags.map((t) => (
+                <div key={t}>#{t}, </div>
+              ))}
+              images={`${images?.[0]}`}
+            />
+          ))}
+    </div>
   );
 
   return <PublicRoute content={content} title="blog" />;

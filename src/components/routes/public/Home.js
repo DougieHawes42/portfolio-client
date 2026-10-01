@@ -29,11 +29,17 @@ const Home = () => {
         );
 
         const apps = result.data.filter((item) => item.category === "App");
+        const sites = result.data.filter((item) => item.category === "Site");
+        const games = result.data.filter((item) => item.category === "Game");
 
-        const random = getRandomItem(apps);
+        const randomApp = getRandomItem(apps);
+        const randomSite = getRandomItem(sites);
+        const randomGame = getRandomItem(games);
 
         setWorkItems(result.data);
-        setRandomApp(random);
+        setRandomApp(randomApp);
+        setRandomSite(randomSite);
+        setRandomGame(randomGame);
       } catch (error) {
         console.error(error);
       }
@@ -74,7 +80,7 @@ const Home = () => {
           <div className="home-work-examples">
             <div className="home-work-example">
               <h4 className="home-work-example-title">Apps</h4>
-              {randomApp && (
+              {randomApp ? (
                 <WorkCard
                   title={randomApp.title}
                   image={randomApp.images[0]}
@@ -82,30 +88,36 @@ const Home = () => {
                   description={randomApp.description}
                   id={randomApp._id}
                 />
+              ) : (
+                <Loader />
               )}
             </div>
             <div className="home-work-example">
               <h4 className="home-work-example-title">Sites</h4>
-              {randomApp && (
+              {randomSite ? (
                 <WorkCard
-                  title={randomApp.title}
-                  image={randomApp.images[0]}
-                  category={randomApp.category}
-                  description={randomApp.description}
-                  id={randomApp._id}
+                  title={randomSite.title}
+                  image={randomSite.images[0]}
+                  category={randomSite.category}
+                  description={randomSite.description}
+                  id={randomSite._id}
                 />
+              ) : (
+                <Loader />
               )}
             </div>
             <div className="home-work-example">
               <h4 className="home-work-example-title">Games</h4>
-              {randomApp && (
+              {randomGame ? (
                 <WorkCard
-                  title={randomApp.title}
-                  image={randomApp.images[0]}
-                  category={randomApp.category}
-                  description={randomApp.description}
-                  id={randomApp._id}
+                  title={randomGame.title}
+                  image={randomGame.images[0]}
+                  category={randomGame.category}
+                  description={randomGame.description}
+                  id={randomGame._id}
                 />
+              ) : (
+                <Loader />
               )}
             </div>
           </div>

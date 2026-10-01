@@ -3,7 +3,13 @@ import { useState } from "react";
 import "./style.scss";
 
 import { IoLogoJavascript } from "react-icons/io";
-import { FaHtml5, FaCss3Alt } from "react-icons/fa";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaLinux,
+  FaGitAlt,
+  FaGithub,
+} from "react-icons/fa";
 import {
   SiSass,
   SiP5Dotjs,
@@ -13,6 +19,8 @@ import {
   SiNodedotjs,
   SiPython,
   SiScratch,
+  SiTypescript,
+  SiJest,
 } from "react-icons/si";
 
 import { PublicRoute } from "../../utils/routes.js";
@@ -27,67 +35,113 @@ const Skills = () => {
       name: "HTML",
       logo: <FaHtml5 />,
       level: "Advanced",
-      description: "Markup language for creating web pages",
+      description:
+        "Building accessible, semantic and well-structured web pages using modern HTML standards and best practices.",
     },
     {
       name: "CSS",
       logo: <FaCss3Alt />,
       level: "Advanced",
-      description: "Styling language for web pages",
+      description:
+        "Creating responsive, visually engaging layouts with precise styling, animations and cross-browser compatibility.",
     },
     {
       name: "SCSS",
       logo: <SiSass />,
       level: "Advanced",
-      description: "CSS preprocessor for more efficient styling",
+      description:
+        "Writing maintainable, modular stylesheets using variables, nesting, mixins and reusable styling patterns.",
     },
     {
       name: "JavaScript",
       logo: <IoLogoJavascript />,
       level: "Advanced",
-      description: "Programming language for web development",
+      description:
+        "Developing interactive, dynamic applications using modern JavaScript, asynchronous programming and advanced language features.",
     },
     {
       name: "P5.js",
       logo: <SiP5Dotjs />,
       level: "Skilled",
-      description: "JavaScript library for creative coding",
+      description:
+        "Creating interactive visual experiences, generative artwork and animations through creative JavaScript programming.",
     },
     {
       name: "MongoDB",
       logo: <SiMongodb />,
       level: "Skilled",
-      description: "NoSQL database for modern applications",
+      description:
+        "Designing and managing flexible NoSQL databases for efficient data storage, retrieval and application development.",
     },
     {
       name: "Express.js",
       logo: <SiExpress />,
       level: "Skilled",
-      description: "Web framework for Node.js",
+      description:
+        "Building scalable server-side applications and RESTful APIs using Express middleware and routing.",
     },
     {
       name: "React.js",
       logo: <SiReact />,
       level: "Advanced",
-      description: "JavaScript library for building user interfaces",
+      description:
+        "Developing reusable, component-driven user interfaces with modern React features, hooks and state management.",
     },
     {
       name: "Node.js",
       logo: <SiNodedotjs />,
       level: "Skilled",
-      description: "JavaScript runtime for server-side development",
+      description:
+        "Building server-side applications, handling asynchronous operations and developing backend services using JavaScript.",
     },
     {
       name: "Python",
       logo: <SiPython />,
       level: "Skilled",
-      description: "General-purpose programming language",
+      description:
+        "Developing versatile applications, automating tasks and solving problems through clean, efficient Python programming.",
     },
     {
       name: "Sratch",
       logo: <SiScratch />,
       level: "Skilled",
-      description: "Visual programming language for beginners",
+      description:
+        "Exploring programming fundamentals through visual coding, interactive projects and event-driven logic.",
+    },
+    {
+      name: "Linux",
+      logo: <FaLinux />,
+      level: "Skilled",
+      description:
+        "Navigating Linux environments, managing system resources and working confidently with command-line tools.",
+    },
+    {
+      name: "Git",
+      logo: <FaGitAlt />,
+      level: "Skilled",
+      description:
+        "Version control system for tracking changes in source code during software development.",
+    },
+    {
+      name: "GitHub",
+      logo: <FaGithub />,
+      level: "Skilled",
+      description:
+        "Platform for hosting and collaborating on Git repositories, managing projects and contributing to open-source software.",
+    },
+    {
+      name: "TypeScript",
+      logo: <SiTypescript />,
+      level: "Skilled",
+      description:
+        "Enhancing JavaScript with static typing, enabling better tooling, error detection and maintainable code.",
+    },
+    {
+      name: "Jest",
+      logo: <SiJest />,
+      level: "Skilled",
+      description:
+        "JavaScript testing framework for writing and running unit tests, ensuring code quality and reliability.",
     },
   ];
 

@@ -160,6 +160,13 @@
   }
 }
 
+.blog-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  justify-content: center;
+}
+
 .skills-container {
   display: flex;
   flex-wrap: wrap;
@@ -260,22 +267,12 @@
     .blog-item-date {
       font-size: 21px;
     }
-    .blog-item-text {
-      font-size: 21px;
-    }
-    .blog-item-tags {
-      span {
-        font-size: 14px;
-      }
-    }
   }
   .blog-item-image-container {
     margin-left: 50%;
     transform: translateX(-50%);
-    min-width: 300px;
-    max-width: 600px;
+    width: 300px;
     position: relative;
-    width: 100%;
     .blog-item-image-wrapper {
       .blog-item-image {
         width: 100%;
@@ -309,8 +306,29 @@
       opacity: 1;
     }
   }
+  .blog-item-tags {
+    margin-left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    width: 900px;
+    span {
+      font-size: 14px;
+    }
+  }
   .blog-item-text {
     margin-top: 14px;
+    max-width: 900px;
+    margin-left: 50%;
+    text-align: justify;
+    transform: translateX(-50%);
+    h4 {
+      font-size: 28px;
+      margin: 7px 0;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 7px;
+    }
   }
 }
 

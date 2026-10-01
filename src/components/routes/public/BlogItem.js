@@ -43,11 +43,6 @@ const BlogItem = () => {
             <p className="blog-item-date">
               {new Date(blogItem.createdAt).toLocaleDateString()}
             </p>
-            <div className="blog-item-tags">
-              {blogItem.tags?.map((t) => (
-                <span key={t}>#{t}, </span>
-              ))}
-            </div>
           </div>
           <div className="blog-item-image-container">
             <div className="blog-item-image-wrapper">
@@ -78,7 +73,14 @@ const BlogItem = () => {
               />
             </div>
           </div>
-          <div className="blog-item-text">{blogItem.text}</div>
+          <div className="blog-item-tags">
+            {blogItem.tags?.map((t) => (
+              <span key={t}>#{t}, </span>
+            ))}
+          </div>
+          <div
+            className="blog-item-text"
+            dangerouslySetInnerHTML={{ __html: blogItem.text }}></div>
         </motion.div>
       )}
     </>

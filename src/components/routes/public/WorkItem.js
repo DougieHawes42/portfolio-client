@@ -1,4 +1,5 @@
 import axios from "axios";
+import Loader from "../../layout/Loader.js";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -101,8 +102,10 @@ const WorkItem = () => {
     </motion.div>
   );
 
-  return (
-    workItem && <PublicItemRoute content={content} title={workItem.title} />
+  return workItem ? (
+    <PublicItemRoute content={content} title={workItem.title} />
+  ) : (
+    <Loader />
   );
 };
 
