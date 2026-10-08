@@ -13,8 +13,6 @@ import { IconLink } from "../../utils/links.js";
 import { PublicRoute } from "../../utils/routes.js";
 import { WorkCard } from "../../utils/cards.js";
 
-import { work } from "../../../data.js";
-
 const Home = () => {
   const [workItems, setWorkItems] = useState([]);
   const [randomApp, setRandomApp] = useState(null);
@@ -36,7 +34,6 @@ const Home = () => {
         const randomSite = getRandomItem(sites);
         const randomGame = getRandomItem(games);
 
-        setWorkItems(result.data);
         setRandomApp(randomApp);
         setRandomSite(randomSite);
         setRandomGame(randomGame);

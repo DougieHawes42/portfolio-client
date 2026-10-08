@@ -74,7 +74,10 @@ const WorkItem = () => {
             {workItem.tags &&
               workItem.tags.map((t) => <div key={t}>#{t}, </div>)}
           </div>
-          <p className="work-item-description">{workItem.description}</p>
+          <div
+            className="work-item-description"
+            dangerouslySetInnerHTML={{ __html: workItem.description }}
+          />
         </div>
       </div>
       <div className="work-item-links-container">

@@ -20,7 +20,9 @@ export const WorkCard = ({ category, image, title, id, description }) => (
     </div>
     <div className="work-card-text">
       <h3 className="work-card-title">{title}</h3>
-      <p className="work-card-description">{description}</p>
+      <div
+        className="work-card-description"
+        dangerouslySetInnerHTML={{ __html: description }}></div>
       <CardLink to={`/work/${id}`} text="see more" />
     </div>
   </motion.div>
