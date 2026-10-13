@@ -416,7 +416,7 @@ h3 {
       border: 2px solid $colour-darkmode02;
     }
     .work-card-text {
-      background-color: rgba($colour-darkmode01, 0.42);
+      background-color: rgba($colour-darkmode01, 0.8);
 
       .work-card-title {
         color: $colour-darkmode01;
@@ -427,7 +427,9 @@ h3 {
           -2px -2px 0 $colour-darkmode04;
       }
       .work-card-description {
-        color: $colour-darkmode03;
+        * {
+          color: $colour-darkmode03;
+        }
       }
     }
   }
