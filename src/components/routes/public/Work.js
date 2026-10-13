@@ -91,7 +91,7 @@ const Work = () => {
                 (category === "Site" && sitesSelected) ||
                 (category === "Game" && gamesSelected),
             )
-            .map(({ _id, images, title, category, description }) => (
+            .map(({ _id, images, title, description }) => (
               <WorkCard
                 key={_id}
                 id={_id}

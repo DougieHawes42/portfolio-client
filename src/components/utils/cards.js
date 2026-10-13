@@ -5,8 +5,7 @@ import { CardLink } from "./links.js";
 
 import "./style.scss";
 
-export const WorkCard = ({ category, image, title, id, description }) => (
-  // use motion to zoom in on render using size
+export const WorkCard = ({ image, title, id, description }) => (
   <motion.div
     className="card work-card"
     initial={{ scale: 0 }}

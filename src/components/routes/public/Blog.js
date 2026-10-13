@@ -6,9 +6,10 @@ import "./style.scss";
 
 import { PublicRoute } from "../../utils/routes.js";
 import { BlogCard } from "../../utils/cards.js";
+import Loader from "../../layout/Loader.js";
 
 const Blog = () => {
-  const [blog, setBlog] = useState("");
+  const [blog, setBlog] = useState([]);
 
   const getResult = async () => {
     try {
@@ -28,7 +29,7 @@ const Blog = () => {
 
   const content = (
     <div className="blog-container">
-      {blog &&
+      {blog.length > 0 ? (
         blog
           .slice()
           .reverse()
@@ -45,7 +46,10 @@ const Blog = () => {
               ))}
               images={`${images?.[0]}`}
             />
-          ))}
+          ))
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 
